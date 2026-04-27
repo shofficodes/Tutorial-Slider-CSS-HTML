@@ -1,0 +1,71 @@
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    height: 100dvh;
+}
+
+.slider_a{
+    position: relative; 
+
+    background-color: lightblue;
+
+    width: 250px;
+    height: 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
+    overflow: hidden;
+}
+
+.slider_a input{
+    z-index: 2;
+}
+
+.slider_a_wrapper{
+    z-index: 1; /* Ist default wenn .slider_a z-index: 2, wird aber festgelegt, damit es in allen Browsern klappt!*/
+    position: absolute;
+
+    display: flex;
+
+    height: 100%;
+    width: 300%; /* 3*100% weil 3x Bilder eingefügt werden! */
+
+    transition: all 0.5s ease-in-out;
+}
+
+.slider_a_element{
+    height: 100%;
+    width: calc(100% / 3); /* 100% wären an der Stelle 300% vom Wrapper, darum nur ein drittel. */ 
+}
+
+.element_one{
+    background-color: lightcoral;
+}
+.element_two{
+    background-color: lightgreen;
+}
+.element_three{
+    background-color: purple;
+}
+
+.slider_a input[value="one"]:checked~.slider_a_wrapper{
+    transform: translateX(calc(100% / 3));
+}
+.slider_a input[value="two"]:checked~.slider_a_wrapper{
+    transform: translateX(0);
+}
+.slider_a input[value="three"]:checked~.slider_a_wrapper{
+    transform: translateX(calc(-100% / 3));
+}
+
