@@ -1,29 +1,30 @@
-
-*{
+* {
     margin: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.slider{
+
+.slider {
     height: 100dvh;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.slider_a{
-    position: relative; 
+
+.slider_a {
+    position: relative;
 
     background-color: lightblue;
 
@@ -33,50 +34,57 @@ body{
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    
+
     overflow: hidden;
 
 }
 
-.slider_a input{
+.slider_a input {
     z-index: 2;
     margin-bottom: 8px;
 }
 
-.slider_a_wrapper{
-    z-index: 1; /* Ist default wenn .slider_a z-index: 2, wird aber festgelegt, damit es in allen Browsern klappt!*/
+.slider_a_wrapper {
+    z-index: 1;
+    /* Ist default wenn .slider_a z-index: 2, wird aber festgelegt, damit es in allen Browsern klappt!*/
     position: absolute;
 
     display: flex;
 
     height: 100%;
-    width: 300%; /* 3*100% weil 3x Bilder eingefügt werden! */
+    width: 300%;
+    /* 3*100% weil 3x Bilder eingefügt werden! */
 
     transition: all 0.5s ease-in-out;
 }
 
-.slider_a_element{
+.slider_a_element {
     height: 100%;
-    width: calc(100% / 3); /* 100% wären an der Stelle 300% vom Wrapper, darum nur ein drittel. */ 
+    width: calc(100% / 3);
+    /* 100% wären an der Stelle 300% vom Wrapper, darum nur ein drittel. */
 }
 
-.element_one{
+.element_one {
     background-color: lightcoral;
 }
-.element_two{
+
+.element_two {
     background-color: lightgreen;
 }
-.element_three{
+
+.element_three {
     background-color: purple;
 }
 
-.slider_a input[value="one"]:checked~.slider_a_wrapper{
+.slider_a input[value="one"]:checked~.slider_a_wrapper {
     transform: translateX(calc(100% / 3));
 }
-.slider_a input[value="two"]:checked~.slider_a_wrapper{
+
+.slider_a input[value="two"]:checked~.slider_a_wrapper {
     transform: translateX(0);
 }
-.slider_a input[value="three"]:checked~.slider_a_wrapper{
+
+.slider_a input[value="three"]:checked~.slider_a_wrapper {
     transform: translateX(calc(-100% / 3));
 }
 
@@ -86,33 +94,64 @@ body{
 
 .scroll-indicator {
     position: absolute;
-    top: 90dvh;
+    top: 95dvh;
     left: 50%;
     transform: translateX(-50%);
     animation: bounce 2s infinite;
     color: var(--color-text-muted);
     cursor: pointer;
 }
+
 .scroll-indicator2 {
-    position: absolute;
-    top: 103dvh;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-bottom: 2%;
+    align-items: flex-start;
+    justify-content: center;
+
     animation: bounce 2s infinite;
     color: var(--color-text-muted);
     cursor: pointer;
 }
+
 .scroll-indicator2 svg {
     transform: scaleY(-1);
 }
 
+.scroll-indicator3 {
+    margin-top: 2%;
+    align-items: flex-end;
+    justify-content: center;
+
+    animation: bounce 2s infinite;
+    color: var(--color-text-muted);
+    cursor: pointer;
+}
+.scroll-indicator4 {
+    margin-top: 5%;
+    align-items: flex-start;
+    justify-content: center;
+
+    animation: bounce 2s infinite;
+    color: var(--color-text-muted);
+    cursor: pointer;
+}
+.scroll-indicator4 svg {
+    transform: scaleY(-1);
+}
+
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateX(-50%) translateY(0);
     }
+
     40% {
         transform: translateX(-50%) translateY(-10px);
     }
+
     60% {
         transform: translateX(-50%) translateY(-5px);
     }
@@ -123,8 +162,8 @@ body{
 
 
 
-.slider_b{
-    position: relative; 
+.slider_b {
+    position: relative;
 
     background-color: lightblue;
 
@@ -134,15 +173,17 @@ body{
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    
+
     overflow: hidden;
 
 }
-.slider_b input{
+
+.slider_b input {
     z-index: 2;
     margin-bottom: 8px;
 }
-.section_wrapper{
+
+.section_wrapper {
     z-index: 1;
     position: absolute;
 
@@ -154,31 +195,34 @@ body{
     transition: all 0.5s ease-in-out;
 }
 
-.slider_b_element{
+.slider_b_element {
     height: 100%;
-    width: calc(100% / 3); /* 100% wären an der Stelle 300% vom Wrapper, darum nur ein drittel. */ 
+    width: calc(100% / 3);
+    /* 100% wären an der Stelle 300% vom Wrapper, darum nur ein drittel. */
 }
 
-.section_wrapper img{    
+.section_wrapper img {
     height: 30%;
     width: 80%;
-    object-fit:scale-down;
+    object-fit: scale-down;
 }
 
-.step_one{
+.step_one {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     gap: 16px;
 }
-.step_two{
-    display: flex; 
+
+.step_two {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.row{
+
+.row {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -187,25 +231,99 @@ body{
     height: 80%;
     gap: 8px;
 }
-.row img{
+
+.row img {
     height: 70%;
     width: 30%;
 }
 
-.step_three{
-    display: flex; 
+.step_three {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 16px;
 }
 
-.slider_b input[value="tuto_one"]:checked~.section_wrapper{
+.slider_b input[value="tuto_one"]:checked~.section_wrapper {
     transform: translateX(calc(100% / 3));
 }
-.slider_b input[value="tuto_two"]:checked~.section_wrapper{
+
+.slider_b input[value="tuto_two"]:checked~.section_wrapper {
     transform: translateX(0);
 }
-.slider_b input[value="tuto_three"]:checked~.section_wrapper{
+
+.slider_b input[value="tuto_three"]:checked~.section_wrapper {
     transform: translateX(calc(-100% / 3));
+}
+
+
+
+
+
+
+.card_slider {
+    height: 100dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 32px;
+
+}
+
+.card_slider_wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.card_slider_element {
+    z-index: 1;
+    height: 250px;
+    width: 80px;
+
+    box-shadow: 0px 1px 4px rgba(3, 7, 18, 0.02),
+        0px 5px 17px rgba(3, 7, 18, 0.04),
+        0px 12px 39px rgba(3, 7, 18, 0.07),
+        0px 20px 70px rgba(3, 7, 18, 0.09),
+        0px 32px 109px rgba(3, 7, 18, 0.11);
+
+    transition: all 0.2s ease-in-out;
+
+    transform: perspective(250px) rotateY(20deg) translateX(-20px);
+    transform-origin: 50% 50%;
+    /* 50% 50% ist die Mitte des Elements, 0% 50% wäre die linke Kante, 100% 50% wäre die rechte Kante. Damit wird der Effekt zentriert */
+    /* perspective(250px) ist die entfernung zum Effekt */
+    /* rotateY(20deg) ist die Drehung um die Y-Achse */
+    /* translateX(-20px) ist die Verschiebung entlang der X-Achse */
+}
+.card_slider_element:hover{
+    z-index: 2;
+    transform: perspective(250px) rotateY(0deg) translateX(0px) scaleX(1.5) scaleY(1.2);
+}
+.card_slider_element:hover~.card_slider_element{
+    transform: perspective(250px) rotateY(-20deg) translateX(20px);
+}
+
+
+.element_one {
+    background-color: lightcoral;
+}
+
+.element_two {
+    background-color: lightgreen;
+}
+
+.element_three {
+    background-color: purple;
+}
+
+.element_four {
+    background-color: lightpink;
+}
+
+.element_five {
+    background-color: violet;
 }
