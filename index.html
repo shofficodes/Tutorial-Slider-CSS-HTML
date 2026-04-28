@@ -7,17 +7,67 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>How To Slider:</h1>
-    <section class="slider_a">  
-        <input type="radio" name="slider" id="slider" value="one" checked>
-        <input type="radio" name="slider" id="slider" value="two">
-        <input type="radio" name="slider" id="slider" value="three">
+    <section class="slider" id="landing">
+        <h1>How To Slider:</h1>
+        <section class="slider_a">  
+            <input type="radio" name="slider" id="slider" value="one" checked>
+            <input type="radio" name="slider" id="slider" value="two">
+            <input type="radio" name="slider" id="slider" value="three">
+            
+            <div class="slider_a_wrapper">
+                <div class="slider_a_element element_one"></div>
+                <div class="slider_a_element element_two"></div>
+                <div class="slider_a_element element_three"></div>
+            </div>
+        </section>
         
-        <div class="slider_a_wrapper">
-            <div class="slider_a_element element_one"></div>
-            <div class="slider_a_element element_two"></div>
-            <div class="slider_a_element element_three"></div>
+        <div class="scroll-indicator">
+            <a href="#preview"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg></a>
         </div>
+    </section>
+
+
+<div class="scroll-indicator2">
+    <a href="#landing"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+    </svg></a>
+</div>
+
+
+    <section class="slider" id="preview">
+        <section class="slider_b">
+            <input type="radio" name="2" id="slider2" value="tuto_one" checked>
+            <input type="radio" name="2" id="slider2" value="tuto_two">
+            <input type="radio" name="2" id="slider2" value="tuto_three">
+            
+        <section class="section_wrapper">
+            <section class="step_one slider_b_element">
+                <h2>Step 1: Add your Sliders-Amount as type:input</h2>
+                <img src="./assets/img/screen1.jpg" alt="Screenshot from code editor showing input elements for sliders">
+                <h2>And your Contents:</h2>
+                <img src="./assets/img/screen2.jpg" alt="Screenshot from code, showing some div-boxes">
+            </section>
+
+
+            <section class="step_two slider_b_element">
+                <h2>Step 2: CSS-Cheatsheet</h2>
+                <div class="row">
+                    <img src="./assets/img/screen3.jpg" alt="Screenshot from code, showing the CSS code">
+                    <img src="./assets/img/screen4.jpg" alt="Screenshot from code, showing the CSS code">
+                    <img src="./assets/img/screen5.jpg" alt="Screenshot from code, showing the CSS code">
+                </div>
+            </section>
+
+            <section class="step_three slider_b_element">
+                <h2>Step 3: Fit your Content </h2>
+                <img src="./assets/img/screen6.jpg" alt="Screenshot from code, showing the HTML code">
+                <img src="./assets/img/screen7.jpg" alt="Screenshot from code, showing the CSS code">
+            </section>
+
+
+        </section>
     </section>
 </body>
 </html>

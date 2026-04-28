@@ -4,15 +4,24 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
-    height: 100dvh;
 }
-
+.slider{
+    height: 100dvh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .slider_a{
     position: relative; 
 
@@ -26,10 +35,12 @@ body{
     align-items: flex-end;
     
     overflow: hidden;
+
 }
 
 .slider_a input{
     z-index: 2;
+    margin-bottom: 8px;
 }
 
 .slider_a_wrapper{
@@ -69,3 +80,132 @@ body{
     transform: translateX(calc(-100% / 3));
 }
 
+
+
+
+
+.scroll-indicator {
+    position: absolute;
+    top: 90dvh;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    color: var(--color-text-muted);
+    cursor: pointer;
+}
+.scroll-indicator2 {
+    position: absolute;
+    top: 103dvh;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    color: var(--color-text-muted);
+    cursor: pointer;
+}
+.scroll-indicator2 svg {
+    transform: scaleY(-1);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+
+
+
+
+
+.slider_b{
+    position: relative; 
+
+    background-color: lightblue;
+
+    width: 80dvw;
+    height: 80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
+    overflow: hidden;
+
+}
+.slider_b input{
+    z-index: 2;
+    margin-bottom: 8px;
+}
+.section_wrapper{
+    z-index: 1;
+    position: absolute;
+
+    display: flex;
+
+    height: 100%;
+    width: 300%;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.slider_b_element{
+    height: 100%;
+    width: calc(100% / 3); /* 100% wären an der Stelle 300% vom Wrapper, darum nur ein drittel. */ 
+}
+
+.section_wrapper img{    
+    height: 30%;
+    width: 80%;
+    object-fit:scale-down;
+}
+
+.step_one{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+}
+.step_two{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 80%;
+    height: 80%;
+    gap: 8px;
+}
+.row img{
+    height: 70%;
+    width: 30%;
+}
+
+.step_three{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.slider_b input[value="tuto_one"]:checked~.section_wrapper{
+    transform: translateX(calc(100% / 3));
+}
+.slider_b input[value="tuto_two"]:checked~.section_wrapper{
+    transform: translateX(0);
+}
+.slider_b input[value="tuto_three"]:checked~.section_wrapper{
+    transform: translateX(calc(-100% / 3));
+}
